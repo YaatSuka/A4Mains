@@ -1,0 +1,15 @@
+h1 {
+  text-align: center;
+}
+
+.bandeau{
+  height: 130px;
+  background-color: #BBAE98;
+  border-bottom: 1px solid black;
+}
+
+.jojo{
+  font-size: 50px;
+  text-align: center;
+  color: red;
+}
