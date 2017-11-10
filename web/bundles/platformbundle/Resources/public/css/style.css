@@ -16,9 +16,3 @@ h1 {
 .bandeau h1 {
   display: table-cell; vertical-align: middle;
 }
-
-.jojo{
-  font-size: 50px;
-  text-align: center;
-  color: red;
-}
