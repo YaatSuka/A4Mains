@@ -7,3 +7,5 @@ INITIALISATION
 ==============
 
 _ Exécuter la commande 'composer install'
+
+_ Ref: Trello - A 4 Mains
