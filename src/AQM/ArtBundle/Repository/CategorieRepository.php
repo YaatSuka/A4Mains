@@ -10,4 +10,11 @@ namespace AQM\ArtBundle\Repository;
  */
 class CategorieRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getOrdreMax()
+    {
+        $queryBuilder = $this->createQueryBuilder('c');
+        $queryBuilder->select('MAX(c.ordre)');
+
+        return $queryBuilder->getQuery()->getSingleResult()[1];
+    }
 }

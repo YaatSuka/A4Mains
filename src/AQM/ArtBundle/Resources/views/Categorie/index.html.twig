@@ -1,5 +1,27 @@
 {% extends 'AQMArtBundle::layout.html.twig' %}
 
 {% block body %}
-    Gestion Categories
+    <div class="well">
+        <h2>Catégories</h2>
+        <a href="{{ path('aqm_art_categories_add') }}" class="btn btn-success">Ajouter une catégorie</a>
+        <table class="table table-striped">
+            <thead>
+                <th>Nom</th>
+                <th>Ordre</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+            {% for categorie in categories %}
+                <tr>
+                    <td>{{ categorie.libelle }}</td>
+                    <td>{{ categorie.ordre }}</td>
+                    <td>
+                        <a class="btn btn-success" href="#">Modifer</a>
+                        <a class="btn btn-danger" href="#">Supprimer</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

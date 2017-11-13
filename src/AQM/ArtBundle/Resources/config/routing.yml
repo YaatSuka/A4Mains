@@ -14,6 +14,10 @@ aqm_art_categories:
     path:     /categories
     defaults: { _controller: AQMArtBundle:Categorie:index }
 
+aqm_art_categories_add:
+    path:     /categories/add
+    defaults: { _controller: AQMArtBundle:Categorie:add }
+
 aqm_art_articles:
     path:     /articles
     defaults: { _controller: AQMArtBundle:Article:index }

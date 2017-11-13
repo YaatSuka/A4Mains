@@ -191,28 +191,4 @@ class Article
     {
         return $this->categorie;
     }
-
-    /**
-     * Set etat
-     *
-     * @param \AQM\ArtBundle\Entity\Etat $etat
-     *
-     * @return Article
-     */
-    public function setEtat(\AQM\ArtBundle\Entity\Etat $etat)
-    {
-        $this->etat = $etat;
-    
-        return $this;
-    }
-
-    /**
-     * Get etat
-     *
-     * @return \AQM\ArtBundle\Entity\Etat
-     */
-    public function getEtat()
-    {
-        return $this->etat;
-    }
 }
