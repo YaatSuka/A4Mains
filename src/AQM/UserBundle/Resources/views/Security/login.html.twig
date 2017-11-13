@@ -6,12 +6,13 @@
       <div class="alert alert-danger">{{ error.message }}</div>
   {% endif %}
 
+    Formulaire de connexion à mettre en place<br><br>
 <form action="{{ path('fos_user_security_check') }}" method="post">
     <label for="username">Login :</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" />
+    <input type="text" id="username" name="_username" value="{{ last_username }}" /> {# Conserver les mêmes attributs #}
 
     <label for="password">Mot de passe :</label>
-    <input type="password" id="password" name="_password" />
+    <input type="password" id="password" name="_password" /> {# Conserver les mêmes attributs #}
     <br />
     <input type="submit" value="Connexion" />
 </form>

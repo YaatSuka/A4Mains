@@ -10,4 +10,9 @@ class AdminController extends Controller
     {
         return $this->render('AQMArtBundle:Admin:index.html.twig');
     }
+
+    public function profilAction()
+    {
+        return $this->render('AQMArtBundle:Admin:profil.html.twig');
+    }
 }

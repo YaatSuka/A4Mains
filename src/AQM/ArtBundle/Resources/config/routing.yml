@@ -5,3 +5,15 @@ aqm_art_homepage:
 aqm_art_admin_home:
     path:     /admin
     defaults: { _controller: AQMArtBundle:Admin:index }
+
+aqm_art_admin_profil_edit:
+    path:     /admin/profil/edit
+    defaults: { _controller: AQMArtBundle:Admin:profil }
+
+aqm_art_categories:
+    path:     /categories
+    defaults: { _controller: AQMArtBundle:Categorie:index }
+
+aqm_art_articles:
+    path:     /articles
+    defaults: { _controller: AQMArtBundle:Article:index }
