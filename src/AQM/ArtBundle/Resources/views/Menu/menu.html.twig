@@ -1,0 +1,13 @@
+<nav class="navbar navbar-inverse">
+    <div class="bandeau">
+        <h1>À 4 Mains</h1> {# Remplacer par image logo => Elodie ? #}
+    </div>
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a></li>
+            {% for categorie in categories %}
+                <li><a href="#">{{ categorie.libelle }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</nav>
