@@ -1,3 +1,7 @@
 aqm_art_homepage:
     path:     /
     defaults: { _controller: AQMArtBundle:Acceuil:index }
+
+aqm_art_admin_home:
+    path:     /admin
+    defaults: { _controller: AQMArtBundle:Admin:index }
