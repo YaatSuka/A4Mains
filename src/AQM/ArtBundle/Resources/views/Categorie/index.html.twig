@@ -16,8 +16,8 @@
                     <td>{{ categorie.libelle }}</td>
                     <td>{{ categorie.ordre }}</td>
                     <td>
-                        <a class="btn btn-success" href="#">Modifer</a>
-                        <a class="btn btn-danger" href="#">Supprimer</a>
+                        <a class="btn btn-success" href="{{ path('aqm_art_categories_edit', { 'id': categorie.id }) }}">Modifer</a>
+                        <a class="btn btn-danger" href="{{ path('aqm_art_categories_delete', { 'id': categorie.id }) }}">Supprimer</a>
                     </td>
                 </tr>
             {% endfor %}

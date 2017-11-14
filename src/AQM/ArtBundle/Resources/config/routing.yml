@@ -18,6 +18,14 @@ aqm_art_categories_add:
     path:     /categories/add
     defaults: { _controller: AQMArtBundle:Categorie:add }
 
+aqm_art_categories_delete:
+    path:     /categories/delete/{id}
+    defaults: { _controller: AQMArtBundle:Categorie:delete }
+
+aqm_art_categories_edit:
+    path:     /categories/edit/{id}
+    defaults: { _controller: AQMArtBundle:Categorie:edit }
+
 aqm_art_articles:
     path:     /articles
     defaults: { _controller: AQMArtBundle:Article:index }

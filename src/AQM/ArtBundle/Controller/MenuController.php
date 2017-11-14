@@ -8,7 +8,7 @@ class MenuController extends Controller
 {
     public function navBarAction()
     {
-        $categories = $this->getDoctrine()->getRepository('AQMArtBundle:Categorie')->findAll();
+        $categories = $this->getDoctrine()->getRepository('AQMArtBundle:Categorie')->getCategoriesByOrdre();
 
         return $this->render('AQMArtBundle:Menu:menu.html.twig', array('categories' => $categories));
     }

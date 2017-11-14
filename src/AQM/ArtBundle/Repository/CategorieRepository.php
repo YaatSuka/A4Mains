@@ -17,4 +17,13 @@ class CategorieRepository extends \Doctrine\ORM\EntityRepository
 
         return $queryBuilder->getQuery()->getSingleResult()[1];
     }
+
+    public function getCategoriesByOrdre()
+    {
+        $queryBuilder = $this->createQueryBuilder('c');
+        $queryBuilder
+            ->addOrderBy('c.ordre')
+            ->addOrderBy('c.libelle');
+        return $queryBuilder->getQuery()->getResult();
+    }
 }

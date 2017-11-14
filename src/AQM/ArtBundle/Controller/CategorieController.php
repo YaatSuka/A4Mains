@@ -14,7 +14,7 @@ class CategorieController extends Controller
 {
     public function indexAction()
     {
-        $categories = $this->getDoctrine()->getRepository('AQMArtBundle:Categorie')->findAll();
+        $categories = $this->getDoctrine()->getRepository('AQMArtBundle:Categorie')->getCategoriesByOrdre();
 
         return $this->render('AQMArtBundle:Categorie:index.html.twig', array(
             'categories' => $categories
@@ -27,7 +27,7 @@ class CategorieController extends Controller
         $maxOrdre = $this->getDoctrine()->getRepository('AQMArtBundle:Categorie')->getOrdreMax();
         $categorie->setOrdre($maxOrdre + 1);
 
-        $form = $this->createAddForm($categorie);
+        $form = $this->createCategorieForm($categorie);
 
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -35,11 +35,8 @@ class CategorieController extends Controller
             $em->flush();
 
             $request->getSession()->getFlashBag()->add('notice', 'Ajout effectué');
-            /*$session = new Session();
-            $session->start();
-            $session->getFlashBag()->add('notice', 'Ajout effectué');*/
 
-            $categories = $this->getDoctrine()->getRepository('AQMArtBundle:Categorie')->findAll();
+            $categories = $em->getRepository('AQMArtBundle:Categorie')->getCategoriesByOrdre();
 
             return $this->redirectToRoute('aqm_art_categories', array(
                 'categories' => $categories
@@ -50,12 +47,57 @@ class CategorieController extends Controller
         ));
     }
 
-    public function createAddForm(Categorie $categorie)
+    public function deleteAction($id)
     {
-        $form = $this->createForm(CategorieType::class, $categorie, array(
-            /*'action' => $this->generateUrl('aqm_art_categories'),
-            'method' => 'POST'*/
+        $em = $this->getDoctrine()->getManager();
+        $categorie = $em->getRepository('AQMArtBundle:Categorie')->find($id);
+
+        if (!$categorie) {
+            throw $this->createNotFoundException('Catégorie introuvable');
+        }
+
+        $em->remove($categorie);
+        $em->flush();
+
+        $this->get('session')->getFlashBag()->add('notice', 'Suppression effectuée');
+
+        return $this->redirectToRoute('aqm_art_categories');
+    }
+
+    public function editAction(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $categorie = $em->getRepository('AQMArtBundle:Categorie')->find($id);
+
+        if (!$categorie) {
+            throw $this->createNotFoundException('Catégorie introuvable');
+        }
+
+        $form = $this->createCategorieForm($categorie);
+
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($categorie);
+            $em->flush();
+
+            $request->getSession()->getFlashBag()->add('notice', 'Modification effectuée');
+
+            $categories = $em->getRepository('AQMArtBundle:Categorie')->getCategoriesByOrdre();
+
+            return $this->redirectToRoute('aqm_art_categories', array(
+                'categories' => $categories
+            ));
+        }
+
+        return $this->render('AQMArtBundle:Categorie:edit.html.twig', array(
+            'form' => $form->createView()
         ));
+    }
+
+    public function createCategorieForm(Categorie $categorie)
+    {
+        $form = $this->createForm(CategorieType::class, $categorie);
 
         $form
             ->add('submit', SubmitType::class, array(

@@ -3,3 +3,16 @@
 {% block header %} {# A REFAIRE #}
     {{ render(controller('AQMArtBundle:Menu:navBar')) }}
 {% endblock %}
+{% block flash %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        <div class="alert alert-danger">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div class="alert alert-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+{% endblock %}
