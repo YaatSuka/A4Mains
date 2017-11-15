@@ -41,3 +41,7 @@ aqm_art_articles_delete:
 aqm_art_articles_edit:
     path:     admin/articles/edit/{id}
     defaults: { _controller: AQMArtBundle:Article:edit }
+
+aqm_art_articles_view:
+    path:     /{type_id}
+    defaults: { _controller: AQMArtBundle:Article:view }

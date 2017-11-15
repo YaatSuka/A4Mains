@@ -10,4 +10,11 @@ namespace AQM\ArtBundle\Repository;
  */
 class ArticleRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getArticlesByCategorie($categorie)
+    {
+        $queryBuilder = $this->createQueryBuilder('a');
+        $queryBuilder
+            ->where($queryBuilder->expr()->eq('a.categorie', $categorie->getId()));
+        return $queryBuilder->getQuery()->getResult();
+    }
 }

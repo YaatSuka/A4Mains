@@ -93,6 +93,19 @@ class ArticleController extends Controller
         ));
     }
 
+    public function viewAction($type_id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $categorie = $em->getRepository('AQMArtBundle:Categorie')->find($type_id);
+
+        $articles = $em->getRepository('AQMArtBundle:Article')->getArticlesByCategorie($categorie);
+
+        return $this->render('AQMArtBundle:Article:view.html.twig', array(
+            'articles' => $articles
+        ));
+    }
+
     public function createArticleForm(Article $article)
     {
         $form = $this->createForm(ArticleType::class, $article);

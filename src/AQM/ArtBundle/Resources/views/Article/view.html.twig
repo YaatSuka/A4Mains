@@ -1,0 +1,23 @@
+{% extends 'AQMArtBundle::layout.html.twig' %}
+
+{% block body %}
+    <div class="well">
+        {% for article in articles %}
+        <div class="row">
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="{{ asset(article.image.webPath) }}">
+                        <img src="{{ asset(article.image.webPath) }}" alt="{{ article.image.alt }}" style="width:100%">
+                    </a>
+                    <div class="caption">
+                        <h4>{{ article.nom }}</h4>
+                        <p>
+                            {{ article.description }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
