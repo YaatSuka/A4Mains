@@ -3,6 +3,7 @@
 namespace AQM\ArtBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Categorie
@@ -36,7 +37,13 @@ class Categorie
     private $ordre;
 
     /**
-     * @ORM\OneToMany(targetEntity="AQM\ArtBundle\Entity\Article", mappedBy="categorie")
+     * @Gedmo\Slug(fields={"libelle"})
+     * @ORM\Column(name="slug", type="string", length=255, unique=true)
+     */
+    private $slug;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AQM\ArtBundle\Entity\Article", mappedBy="categorie", cascade={"remove"})
      */
     private $articles;
 
@@ -163,5 +170,29 @@ class Categorie
     public function getArticles()
     {
         return $this->articles;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     *
+     * @return Categorie
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

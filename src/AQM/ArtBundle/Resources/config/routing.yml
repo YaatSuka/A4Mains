@@ -43,5 +43,5 @@ aqm_art_articles_edit:
     defaults: { _controller: AQMArtBundle:Article:edit }
 
 aqm_art_articles_view:
-    path:     /{type_id}
+    path:     /view/{slug}
     defaults: { _controller: AQMArtBundle:Article:view }

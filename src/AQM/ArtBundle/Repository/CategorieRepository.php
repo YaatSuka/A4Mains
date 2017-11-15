@@ -26,4 +26,14 @@ class CategorieRepository extends \Doctrine\ORM\EntityRepository
             ->addOrderBy('c.libelle');
         return $queryBuilder->getQuery()->getResult();
     }
+
+    public function getCategorieBySlug($slug)
+    {
+        $queryBuilder = $this->createQueryBuilder('c');
+        $queryBuilder
+            ->where('c.slug = :slug')
+            ->setParameter('slug', $slug);
+
+        return $queryBuilder->getQuery()->getSingleResult();
+    }
 }

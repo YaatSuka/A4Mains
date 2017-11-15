@@ -6,7 +6,7 @@
         <ul class="nav navbar-nav">
             <li class="active" title="Acceuil"><a href="{{ path('aqm_art_homepage') }}"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a></li>
             {% for categorie in categories %}
-                <li><a href="{{ path('aqm_art_articles_view', { 'type_id': categorie.id }) }}">{{ categorie.libelle }}</a></li>
+                <li><a href="{{ path('aqm_art_articles_view', { 'slug': categorie.slug }) }}">{{ categorie.libelle }}</a></li>
             {% endfor %}
         </ul>
         {% if is_granted('ROLE_ADMIN') %}

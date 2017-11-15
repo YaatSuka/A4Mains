@@ -93,11 +93,11 @@ class ArticleController extends Controller
         ));
     }
 
-    public function viewAction($type_id)
+    public function viewAction($slug)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $categorie = $em->getRepository('AQMArtBundle:Categorie')->find($type_id);
+        $categorie = $em->getRepository('AQMArtBundle:Categorie')->getCategorieBySlug($slug);
 
         $articles = $em->getRepository('AQMArtBundle:Article')->getArticlesByCategorie($categorie);
 
