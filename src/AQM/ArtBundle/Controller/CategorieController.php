@@ -77,17 +77,12 @@ class CategorieController extends Controller
         $form = $this->createCategorieForm($categorie);
 
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
-            $em = $this->getDoctrine()->getManager();
             $em->persist($categorie);
             $em->flush();
 
             $request->getSession()->getFlashBag()->add('notice', 'Modification effectuée');
 
-            $categories = $em->getRepository('AQMArtBundle:Categorie')->getCategoriesByOrdre();
-
-            return $this->redirectToRoute('aqm_art_categories', array(
-                'categories' => $categories
-            ));
+            return $this->redirectToRoute('aqm_art_categories');
         }
 
         return $this->render('AQMArtBundle:Categorie:edit.html.twig', array(

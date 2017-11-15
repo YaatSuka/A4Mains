@@ -11,21 +11,33 @@ aqm_art_admin_profil_edit:
     defaults: { _controller: AQMArtBundle:Admin:profil }
 
 aqm_art_categories:
-    path:     /categories
+    path:     admin/categories
     defaults: { _controller: AQMArtBundle:Categorie:index }
 
 aqm_art_categories_add:
-    path:     /categories/add
+    path:     admin/categories/add
     defaults: { _controller: AQMArtBundle:Categorie:add }
 
 aqm_art_categories_delete:
-    path:     /categories/delete/{id}
+    path:     admin/categories/delete/{id}
     defaults: { _controller: AQMArtBundle:Categorie:delete }
 
 aqm_art_categories_edit:
-    path:     /categories/edit/{id}
+    path:     admin/categories/edit/{id}
     defaults: { _controller: AQMArtBundle:Categorie:edit }
 
 aqm_art_articles:
-    path:     /articles
+    path:     admin/articles
     defaults: { _controller: AQMArtBundle:Article:index }
+
+aqm_art_articles_add:
+    path:     admin/articles/add
+    defaults: { _controller: AQMArtBundle:Article:add }
+
+aqm_art_articles_delete:
+    path:     admin/articles/delete/{id}
+    defaults: { _controller: AQMArtBundle:Article:delete }
+
+aqm_art_articles_edit:
+    path:     admin/articles/edit/{id}
+    defaults: { _controller: AQMArtBundle:Article:edit }

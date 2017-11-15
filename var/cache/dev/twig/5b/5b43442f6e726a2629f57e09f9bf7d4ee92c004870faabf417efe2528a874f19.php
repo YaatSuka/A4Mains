@@ -15,11 +15,11 @@ class __TwigTemplate_7ab4332ffe9da84734c1e37cfc024bebbab3f4301522eecf6b26ae17006
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a5859ea51b145182e06cfdba0e7180725bc630f8192d587ab6822d8b926f4008 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_a5859ea51b145182e06cfdba0e7180725bc630f8192d587ab6822d8b926f4008->enter($__internal_a5859ea51b145182e06cfdba0e7180725bc630f8192d587ab6822d8b926f4008_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@AQMArt/Menu/menu.html.twig"));
+        $__internal_aebaaef10f52ec6b8f139c7e60ba5b2fc4c2bb6a84037cbf13dbbfee6b4951c5 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_aebaaef10f52ec6b8f139c7e60ba5b2fc4c2bb6a84037cbf13dbbfee6b4951c5->enter($__internal_aebaaef10f52ec6b8f139c7e60ba5b2fc4c2bb6a84037cbf13dbbfee6b4951c5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@AQMArt/Menu/menu.html.twig"));
 
-        $__internal_40daab94ab73e453c7cf9a65ab26da549b3517ef316b9a69bdd82376d229c6a6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_40daab94ab73e453c7cf9a65ab26da549b3517ef316b9a69bdd82376d229c6a6->enter($__internal_40daab94ab73e453c7cf9a65ab26da549b3517ef316b9a69bdd82376d229c6a6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@AQMArt/Menu/menu.html.twig"));
+        $__internal_6247e3aaa3aa64ca61d8315c91863a2945b08a1c0268c84bdf5bf771f3cc1f0a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_6247e3aaa3aa64ca61d8315c91863a2945b08a1c0268c84bdf5bf771f3cc1f0a->enter($__internal_6247e3aaa3aa64ca61d8315c91863a2945b08a1c0268c84bdf5bf771f3cc1f0a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@AQMArt/Menu/menu.html.twig"));
 
         // line 1
         echo "<nav class=\"navbar navbar-inverse\">
@@ -57,7 +57,7 @@ class __TwigTemplate_7ab4332ffe9da84734c1e37cfc024bebbab3f4301522eecf6b26ae17006
                 <li><a href=\"";
             // line 14
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("aqm_art_articles");
-            echo "\">Ajouter un article</a></li>
+            echo "\">Gérer les articles</a></li>
                 <li><a href=\"";
             // line 15
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("aqm_art_categories");
@@ -88,10 +88,10 @@ class __TwigTemplate_7ab4332ffe9da84734c1e37cfc024bebbab3f4301522eecf6b26ae17006
         echo "    </div>
 </nav>";
         
-        $__internal_a5859ea51b145182e06cfdba0e7180725bc630f8192d587ab6822d8b926f4008->leave($__internal_a5859ea51b145182e06cfdba0e7180725bc630f8192d587ab6822d8b926f4008_prof);
+        $__internal_aebaaef10f52ec6b8f139c7e60ba5b2fc4c2bb6a84037cbf13dbbfee6b4951c5->leave($__internal_aebaaef10f52ec6b8f139c7e60ba5b2fc4c2bb6a84037cbf13dbbfee6b4951c5_prof);
 
         
-        $__internal_40daab94ab73e453c7cf9a65ab26da549b3517ef316b9a69bdd82376d229c6a6->leave($__internal_40daab94ab73e453c7cf9a65ab26da549b3517ef316b9a69bdd82376d229c6a6_prof);
+        $__internal_6247e3aaa3aa64ca61d8315c91863a2945b08a1c0268c84bdf5bf771f3cc1f0a->leave($__internal_6247e3aaa3aa64ca61d8315c91863a2945b08a1c0268c84bdf5bf771f3cc1f0a_prof);
 
     }
 
@@ -125,7 +125,7 @@ class __TwigTemplate_7ab4332ffe9da84734c1e37cfc024bebbab3f4301522eecf6b26ae17006
         </ul>
         {% if is_granted('ROLE_ADMIN') %}
             <ul class=\"nav navbar-nav navbar-right\">
-                <li><a href=\"{{ path('aqm_art_articles') }}\">Ajouter un article</a></li>
+                <li><a href=\"{{ path('aqm_art_articles') }}\">Gérer les articles</a></li>
                 <li><a href=\"{{ path('aqm_art_categories') }}\">Gérer les catégories</a></li>
                 <li class=\"dropdown\">
                     <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">

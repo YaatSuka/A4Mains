@@ -123,32 +123,50 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AQM\\ArtBundle\\Controller\\AdminController::profilAction',  '_route' => 'aqm_art_admin_profil_edit',);
             }
 
-        }
+            if (0 === strpos($pathinfo, '/admin/categories')) {
+                // aqm_art_categories
+                if ('/admin/categories' === $pathinfo) {
+                    return array (  '_controller' => 'AQM\\ArtBundle\\Controller\\CategorieController::indexAction',  '_route' => 'aqm_art_categories',);
+                }
 
-        // aqm_art_articles
-        if ('/articles' === $pathinfo) {
-            return array (  '_controller' => 'AQM\\ArtBundle\\Controller\\ArticleController::indexAction',  '_route' => 'aqm_art_articles',);
-        }
+                // aqm_art_categories_add
+                if ('/admin/categories/add' === $pathinfo) {
+                    return array (  '_controller' => 'AQM\\ArtBundle\\Controller\\CategorieController::addAction',  '_route' => 'aqm_art_categories_add',);
+                }
 
-        if (0 === strpos($pathinfo, '/categories')) {
-            // aqm_art_categories
-            if ('/categories' === $pathinfo) {
-                return array (  '_controller' => 'AQM\\ArtBundle\\Controller\\CategorieController::indexAction',  '_route' => 'aqm_art_categories',);
+                // aqm_art_categories_delete
+                if (0 === strpos($pathinfo, '/admin/categories/delete') && preg_match('#^/admin/categories/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'aqm_art_categories_delete')), array (  '_controller' => 'AQM\\ArtBundle\\Controller\\CategorieController::deleteAction',));
+                }
+
+                // aqm_art_categories_edit
+                if (0 === strpos($pathinfo, '/admin/categories/edit') && preg_match('#^/admin/categories/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'aqm_art_categories_edit')), array (  '_controller' => 'AQM\\ArtBundle\\Controller\\CategorieController::editAction',));
+                }
+
             }
 
-            // aqm_art_categories_add
-            if ('/categories/add' === $pathinfo) {
-                return array (  '_controller' => 'AQM\\ArtBundle\\Controller\\CategorieController::addAction',  '_route' => 'aqm_art_categories_add',);
-            }
+            elseif (0 === strpos($pathinfo, '/admin/articles')) {
+                // aqm_art_articles
+                if ('/admin/articles' === $pathinfo) {
+                    return array (  '_controller' => 'AQM\\ArtBundle\\Controller\\ArticleController::indexAction',  '_route' => 'aqm_art_articles',);
+                }
 
-            // aqm_art_categories_delete
-            if (0 === strpos($pathinfo, '/categories/delete') && preg_match('#^/categories/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'aqm_art_categories_delete')), array (  '_controller' => 'AQM\\ArtBundle\\Controller\\CategorieController::deleteAction',));
-            }
+                // aqm_art_articles_add
+                if ('/admin/articles/add' === $pathinfo) {
+                    return array (  '_controller' => 'AQM\\ArtBundle\\Controller\\ArticleController::addAction',  '_route' => 'aqm_art_articles_add',);
+                }
 
-            // aqm_art_categories_edit
-            if (0 === strpos($pathinfo, '/categories/edit') && preg_match('#^/categories/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'aqm_art_categories_edit')), array (  '_controller' => 'AQM\\ArtBundle\\Controller\\CategorieController::editAction',));
+                // aqm_art_articles_delete
+                if (0 === strpos($pathinfo, '/admin/articles/delete') && preg_match('#^/admin/articles/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'aqm_art_articles_delete')), array (  '_controller' => 'AQM\\ArtBundle\\Controller\\ArticleController::deleteAction',));
+                }
+
+                // aqm_art_articles_edit
+                if (0 === strpos($pathinfo, '/admin/articles/edit') && preg_match('#^/admin/articles/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'aqm_art_articles_edit')), array (  '_controller' => 'AQM\\ArtBundle\\Controller\\ArticleController::editAction',));
+                }
+
             }
 
         }

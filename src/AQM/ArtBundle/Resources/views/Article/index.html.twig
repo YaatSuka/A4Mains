@@ -1,5 +1,37 @@
 {% extends 'AQMArtBundle::layout.html.twig' %}
 
 {% block body %}
-    Interface pour articles à concevoir
+    <div class="well">
+        <h2>Articles</h2>
+        <a href="{{ path('aqm_art_articles_add') }}" class="btn btn-success">Ajouter un article</a>
+        <table class="table table-striped">
+            <thead>
+                <th>Nom</th>
+                <th>Catégorie</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Etat</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+            {% for article in articles %}
+                <tr>
+                    <td>{{ article.nom }}</td>
+                    <td>{{ article.categorie.libelle }}</td>
+                    <td>{{ article.description }}</td>
+                    <td>{{ article.prix }}</td>
+                    <td>{{ article.etat.libelle }}</td>
+                    <td>
+                        <img src="{{ asset(article.image.webPath) }}" alt="{{ article.image.alt }}" width="40px"/>
+                    </td>
+                    <td>
+                        <a class="btn btn-success" href="{{ path('aqm_art_articles_edit', { 'id': article.id }) }}">Modifer</a>
+                        <a class="btn btn-danger" href="{{ path('aqm_art_articles_delete', { 'id': article.id }) }}">Supprimer</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

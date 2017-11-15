@@ -3,6 +3,7 @@
 namespace AQM\ArtBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Article
@@ -31,13 +32,6 @@ class Article
     /**
      * @var string
      *
-     * @ORM\Column(name="libelle", type="string", length=255)
-     */
-    private $libelle;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
@@ -60,6 +54,13 @@ class Article
      * @ORM\JoinColumn(nullable=false)
      */
     private $etat;
+
+    /**
+     * @ORM\OneToOne(targetEntity="AQM\ArtBundle\Entity\Image", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=false)
+     * @Assert\Valid()
+     */
+    private $image;
 
 
     /**
@@ -94,30 +95,6 @@ class Article
     public function getNom()
     {
         return $this->nom;
-    }
-
-    /**
-     * Set libelle
-     *
-     * @param string $libelle
-     *
-     * @return Article
-     */
-    public function setLibelle($libelle)
-    {
-        $this->libelle = $libelle;
-    
-        return $this;
-    }
-
-    /**
-     * Get libelle
-     *
-     * @return string
-     */
-    public function getLibelle()
-    {
-        return $this->libelle;
     }
 
     /**
@@ -214,5 +191,29 @@ class Article
     public function getEtat()
     {
         return $this->etat;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \AQM\ArtBundle\Entity\Image $image
+     *
+     * @return Article
+     */
+    public function setImage(\AQM\ArtBundle\Entity\Image $image)
+    {
+        $this->image = $image;
+    
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \AQM\ArtBundle\Entity\Image
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }

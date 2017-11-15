@@ -24,13 +24,6 @@ class Categorie
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=255)
-     */
-    private $nom;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="libelle", type="string", length=255)
      */
     private $libelle;
@@ -38,7 +31,7 @@ class Categorie
     /**
      * @var int
      *
-     * @ORM\Column(name="ordre", type="integer", unique=true)
+     * @ORM\Column(name="ordre", type="integer")
      */
     private $ordre;
 
@@ -129,5 +122,46 @@ class Categorie
     {
         return $this->ordre;
     }
-}
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->articles = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add article
+     *
+     * @param \AQM\ArtBundle\Entity\Article $article
+     *
+     * @return Categorie
+     */
+    public function addArticle(\AQM\ArtBundle\Entity\Article $article)
+    {
+        $this->articles[] = $article;
+    
+        return $this;
+    }
+
+    /**
+     * Remove article
+     *
+     * @param \AQM\ArtBundle\Entity\Article $article
+     */
+    public function removeArticle(\AQM\ArtBundle\Entity\Article $article)
+    {
+        $this->articles->removeElement($article);
+    }
+
+    /**
+     * Get articles
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getArticles()
+    {
+        return $this->articles;
+    }
+}

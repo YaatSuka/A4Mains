@@ -85,6 +85,8 @@
   'AQMArtBundle:Acceuil:index.html.twig' => __DIR__.'/../../../src/AQM/ArtBundle/Resources/views/Acceuil/index.html.twig',
   'AQMArtBundle:Admin:index.html.twig' => __DIR__.'/../../../src/AQM/ArtBundle/Resources/views/Admin/index.html.twig',
   'AQMArtBundle:Admin:profil.html.twig' => __DIR__.'/../../../src/AQM/ArtBundle/Resources/views/Admin/profil.html.twig',
+  'AQMArtBundle:Article:add.html.twig' => __DIR__.'/../../../src/AQM/ArtBundle/Resources/views/Article/add.html.twig',
+  'AQMArtBundle:Article:edit.html.twig' => __DIR__.'/../../../src/AQM/ArtBundle/Resources/views/Article/edit.html.twig',
   'AQMArtBundle:Article:index.html.twig' => __DIR__.'/../../../src/AQM/ArtBundle/Resources/views/Article/index.html.twig',
   'AQMArtBundle:Categorie:add.html.twig' => __DIR__.'/../../../src/AQM/ArtBundle/Resources/views/Categorie/add.html.twig',
   'AQMArtBundle:Categorie:edit.html.twig' => __DIR__.'/../../../src/AQM/ArtBundle/Resources/views/Categorie/edit.html.twig',
