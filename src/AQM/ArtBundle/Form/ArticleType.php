@@ -25,8 +25,9 @@ class ArticleType extends \Symfony\Component\Form\AbstractType
             ))
             ->add('description', TextareaType::class, array(
                 'attr' => array(
-                    'placeholder' => 'Entrez une description'
-                )
+                    'placeholder' => 'Entrez une description',
+                ),
+                'required' => false
             ))
             ->add('prix', IntegerType::class, array(
                 'attr' => array(
