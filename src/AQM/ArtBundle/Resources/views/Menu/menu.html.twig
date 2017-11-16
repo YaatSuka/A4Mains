@@ -4,13 +4,17 @@
     </div>
     <div class="container-fluid">
         <ul class="nav navbar-nav">
-            <li class="active" title="Acceuil"><a href="{{ path('aqm_art_homepage') }}"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a></li>
+            <li title="Acceuil">
+                <a id="navbar-home-link" href="{{ path('aqm_art_homepage') }}">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                </a>
+            </li>
             {% for categorie in categories %}
                 <li><a href="{{ path('aqm_art_articles_view', { 'slug': categorie.slug }) }}">{{ categorie.libelle }}</a></li>
             {% endfor %}
         </ul>
         {% if is_granted('ROLE_ADMIN') %}
-            <ul class="nav navbar-nav navbar-right">
+            <ul id="nav-bar-list" class="nav navbar-nav navbar-right">
                 <li><a href="{{ path('aqm_art_articles') }}">Gérer les articles</a></li>
                 <li><a href="{{ path('aqm_art_categories') }}">Gérer les catégories</a></li>
                 <li class="dropdown">

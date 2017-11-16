@@ -3,6 +3,7 @@
 {% block header %} {# A REFAIRE #}
     {{ render(controller('AQMArtBundle:Menu:navBar')) }}
 {% endblock %}
+
 {% block flash %}
     {% for flashMessage in app.session.flashbag.get('error') %}
         <div class="alert alert-danger">
@@ -15,4 +16,98 @@
             {{ flashMessage }}
         </div>
     {% endfor %}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/aqmart/js/navbar.js') }}" type="text/javascript"></script>
+    <script>
+        function initMap() {
+            var uluru = {lat: -22.273904, lng: 166.452752};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfeTVebqLaST7EiucEhStsc7mgmevuqfs&callback=initMap" async defer></script>
+{% endblock %}
+
+{% block footer %}
+    <footer class="page-footer center-on-small-only stylish-color-dark">
+        <div class="container text-center text-md-left">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4 class="title font-bold"><i class="glyphicon glyphicon-map-marker"></i> Où nous trouver</h4>
+                    <hr class="deep-purple accent-2 mb-2 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        13 bis rue Soeur-Martine<br />
+                        Vallée des Colons<br />
+                        98800 Nouméa
+                    </p>
+                    <div id="map" style="">
+                        Map
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="title font-bold"><i class="glyphicon glyphicon-time"></i> Nos horaires</h4>
+                    <hr class="deep-purple accent-2 mb-2 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        Du 22/11/2017 au 15/12/2017<br />
+                        <ul>
+                            <li>
+                                Mercredi<ul><li>14h - 18h</li></ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                Vendredi
+                                <span id="nocturne-tooltip">
+                                    *<span>
+                                        <img class="callout" src="{{ asset('bundles/aqmart/images/icons/callout.gif') }}" />
+                                        <h5>"Les nocturnes"</h5>
+                                        <p>Des mis en bouches maison vous seront proposés</p>
+                                    </span>
+                                </span>
+                                <ul><li>17h - 20h</li></ul>
+                            </li>
+                         </ul>
+                         <ul>
+                            <li>
+                                Samedi<ul><li>9h - 12h</li></ul>
+                            </li>
+                         </ul>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="title font-bold"><i class="glyphicon glyphicon-earphone"></i> Contactez-nous</h4>
+                    <hr class="deep-purple accent-2 mb-2 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <ul>
+                        <li>Sandra:
+                            <ul>
+                                <li><i class="glyphicon glyphicon-phone"></i> 83.41.72</li>
+                                <li><i class="glyphicon glyphicon-envelope"> skanoumea@canl.nc</i></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>Stéphanie:
+                            <ul>
+                                <li><i class="glyphicon glyphicon-phone"></i> 81.53.40</li>
+                                <li><i class="glyphicon glyphicon-envelope"> stfany8574@gmail.com</i></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container-fluid">
+                À 4 Mains © {{ "now"|date('Y') }}
+            </div>
+        </div>
+    </footer>
 {% endblock %}
