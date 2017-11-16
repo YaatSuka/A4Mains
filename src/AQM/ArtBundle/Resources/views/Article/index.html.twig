@@ -3,7 +3,7 @@
 {% block body %}
     <div class="well">
         <h2>Articles</h2>
-        <a href="{{ path('aqm_art_articles_add') }}" class="btn btn-success">Ajouter un article</a>
+        <a href="{{ path('aqm_art_articles_add') }}" class="btn btn-success"><i class="glyphicon glyphicon-plus-sign"></i> Ajouter un article</a>
         <table class="table table-striped">
             <thead>
                 <th>Nom</th>
@@ -26,8 +26,10 @@
                         <img src="{{ asset(article.image.webPath) }}" alt="{{ article.image.alt }}" width="40px"/>
                     </td>
                     <td>
-                        <a class="btn btn-success" href="{{ path('aqm_art_articles_edit', { 'id': article.id }) }}">Modifer</a>
-                        <a class="btn btn-danger" href="{{ path('aqm_art_articles_delete', { 'id': article.id }) }}">Supprimer</a>
+                        <a class="btn btn-success" href="{{ path('aqm_art_articles_edit', { 'id': article.id }) }}"><i class="fa fa-pencil"></i> Modifer</a>
+                        <a class="btn btn-danger" href="{{ path('aqm_art_articles_delete', { 'id': article.id }) }}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer la catégorie ?\nVous supprimerez TOUS les articles dans cette catégorie')">
+                            <i class="fa fa-trash"></i> Supprimer
+                        </a>
                     </td>
                 </tr>
             {% endfor %}
