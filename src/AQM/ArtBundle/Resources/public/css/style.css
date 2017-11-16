@@ -1,3 +1,9 @@
+body {
+  background-image: url("../images/site/background.jpg");
+  background-size: 100%;
+  margin: 0;
+}
+
 h1 {
   text-align: center;
   font-family: "Verdana", "Arial", serif;
@@ -7,7 +13,7 @@ h1 {
   height: 130px;
   width: 100%;
   display: table;
-  background-color: #BBAE98;
+  background-color: #C4C3C8;
   padding-top: 0;
   border-bottom: 1px solid black;
   margin-top: -5px;
@@ -78,4 +84,8 @@ h1 {
   text-align: center;
   margin-top: 70px;
   margin-bottom: 70px;
+}
+
+#view_content {
+  margin-top: 6em;
 }
