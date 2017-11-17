@@ -102,7 +102,8 @@ class ArticleController extends Controller
         $articles = $em->getRepository('AQMArtBundle:Article')->getArticlesByCategorie($categorie);
 
         return $this->render('AQMArtBundle:Article:view.html.twig', array(
-            'articles' => $articles
+            'articles' => $articles,
+            'categorie' => $categorie
         ));
     }
 

@@ -5,7 +5,7 @@
         {% block fos_user_content %}
             <h2><i class="fa fa-user"></i> Mon profil</h2>
             <div align="right">
-                <a href="{{ path('fos_user_change_password') }}" class="btn btn-default"><i class="fa fa-pencil"></i> Modifier mon mot de passe</a>
+                <a href="{{ path('fos_user_change_password') }}" class="btn btn-default"><i class="fa fa-lock"></i> Modifier mon mot de passe</a>
             </div>
             {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
             <div class="form-group">
