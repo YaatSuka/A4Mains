@@ -3,9 +3,9 @@
 {% block body %}
     <div class="well">
         {% block fos_user_content %}
-            <h2>Mon profil</h2>
+            <h2><i class="fa fa-user"></i> Mon profil</h2>
             <div align="right">
-                <a href="{{ path('fos_user_change_password') }}" class="btn btn-default">Modifier mon mot de passe</a>
+                <a href="{{ path('fos_user_change_password') }}" class="btn btn-default"><i class="fa fa-pencil"></i> Modifier mon mot de passe</a>
             </div>
             {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
             <div class="form-group">
@@ -30,7 +30,8 @@
                 </div>
             </div>
             <div>
-                <input type="submit" value="Editer mon profil" class="btn btn-success" />
+                <input id="edit_submit_btn" type="submit" style="display: none" />
+                <label for="edit_submit_btn" class="btn btn-success"><i class="fa fa-check"></i> Editer mon profil</label>
             </div>
             {{ form_end(form) }}
         {% endblock %}
