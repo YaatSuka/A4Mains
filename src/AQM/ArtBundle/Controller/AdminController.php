@@ -13,6 +13,6 @@ class AdminController extends Controller
 
     public function profilAction()
     {
-        return $this->render('AQMArtBundle:Admin:profil.html.twig');
+        return $this->render('AQMUserBundle:Security:profil.html.twig');
     }
 }

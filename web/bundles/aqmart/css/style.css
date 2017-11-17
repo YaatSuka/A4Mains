@@ -4,7 +4,7 @@ body {
   margin: 0;
 }
 
-h1 {
+h1, h2 {
   text-align: center;
   font-family: "Verdana", "Arial", serif;
 }
@@ -93,4 +93,16 @@ h1 {
 .portfolio_img {
   width: 100%;
   height: 16em;
+}
+
+.article_view_prix {
+  color: dodgerblue;
+}
+
+.article_dispo {
+  color: green;
+}
+
+.article_rupture {
+  color: orangered;
 }

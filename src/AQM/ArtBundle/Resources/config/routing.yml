@@ -6,8 +6,8 @@ aqm_art_admin_home:
     path:     /admin
     defaults: { _controller: AQMArtBundle:Admin:index }
 
-aqm_art_admin_profil_edit:
-    path:     /admin/profil/edit
+aqm_art_admin_profil:
+    path:     /admin/profil
     defaults: { _controller: AQMArtBundle:Admin:profil }
 
 aqm_art_categories:
