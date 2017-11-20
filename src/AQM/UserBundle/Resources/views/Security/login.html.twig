@@ -28,5 +28,6 @@
 {% endblock %}
 
 {% block javascripts %}
+    {{ parent() }}
     <script src="{{ asset('bundles/aqmart/js/login.js') }}"></script>
 {% endblock %}
