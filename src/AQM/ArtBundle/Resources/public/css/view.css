@@ -82,11 +82,10 @@ h1 {
 .modal-content {
     margin-right: auto;
     margin-left: auto;
-    margin-top: 5em;
+    margin-top: 2em;
     display: block;
-    width: 80%;
-    max-width: 600px;
-    max-height: 500px;
+    max-width: 78%;
+    max-height: 78%;
 }
 
 .caption {
