@@ -5,9 +5,11 @@ namespace AQM\ArtBundle\Controller;
 use AQM\ArtBundle\Entity\Article;
 use AQM\ArtBundle\Form\ArticleType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\ButtonType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\HttpFoundation\File\File;
 
 class ArticleController extends Controller
 {
@@ -80,6 +82,10 @@ class ArticleController extends Controller
         $form = $this->createArticleForm($article);
 
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+
+            $image = $article->getImage();
+            $article->setImage($image);
+
             $em->persist($article);
             $em->flush();
 
@@ -89,7 +95,8 @@ class ArticleController extends Controller
         }
 
         return $this->render('AQMArtBundle:Article:edit.html.twig', array(
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'article' => $article
         ));
     }
 

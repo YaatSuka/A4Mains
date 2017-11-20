@@ -17,4 +17,13 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
             ->where($queryBuilder->expr()->eq('a.categorie', $categorie->getId()));
         return $queryBuilder->getQuery()->getResult();
     }
+
+    public function getLastArticlesFromCategorie($categorie, $limit) {
+        $queryBuilder = $this->createQueryBuilder('a');
+        $queryBuilder
+            ->where($queryBuilder->expr()->eq('a.categorie', $categorie->getId()))
+            ->orderBy('a.id', 'DESC')
+            ->setMaxResults($limit);
+        return $queryBuilder->getQuery()->getResult();
+    }
 }

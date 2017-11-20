@@ -50,7 +50,9 @@ class ArticleType extends \Symfony\Component\Form\AbstractType
                 'placeholder' => 'Sélectionnez un état',
                 'required' => true
             ))
-            ->add('image', ImageType::class);
+            ->add('image', ImageType::class, array(
+                'required' => false
+            ));
     }
 
     /**

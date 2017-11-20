@@ -1,20 +1,32 @@
 {% extends "AQMArtBundle::layout.html.twig" %}
 
 {% block body %}
+    <div class="well">
+        {% if error %}
+            <div class="alert alert-danger">{{ error.message }}</div>
+        {% endif %}
 
-  {% if error %}
-      <div class="alert alert-danger">{{ error.message }}</div>
-  {% endif %}
+        <div class="login-block">
+            <form action="{{ path('fos_user_security_check') }}" method="post">
+                <h2>Connexion</h2>
+                <div class="md-form">
+                    <i class="fa fa-user prefix grey-text"></i>
+                    <input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control" />
+                    <label for="username">Login</label>
+                </div>
+                <div class="md-form">
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <input type="password" id="password" name="_password" class="form-control" />
+                    <label for="password">Mot de passe</label>
+                </div>
+                <div class="text-right">
+                    <input type="submit" value="Connexion" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
 
-    Formulaire de connexion à mettre en place<br><br>
-<form action="{{ path('fos_user_security_check') }}" method="post">
-    <label for="username">Login :</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" /> {# Conserver les mêmes attributs #}
-
-    <label for="password">Mot de passe :</label>
-    <input type="password" id="password" name="_password" /> {# Conserver les mêmes attributs #}
-    <br />
-    <input type="submit" value="Connexion" />
-</form>
-
+{% block javascripts %}
+    <script src="{{ asset('bundles/aqmart/js/login.js') }}"></script>
 {% endblock %}

@@ -56,6 +56,10 @@ h1 {
     }
 }
 
+#view_content {
+    margin-top: 6em;
+}
+
 /* TEST MODAL GALLERY */
 
 .portfolio_img:hover {
