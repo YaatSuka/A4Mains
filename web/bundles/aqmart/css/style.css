@@ -87,8 +87,16 @@ h1, h2 {
 }
 
 .article-content-div {
+  position: relative;
   -webkit-box-shadow: 0 0 15px black;
   box-shadow: 0 0 15px black;
+  height: 33em;
+}
+
+.prix-etat-div {
+  position: absolute;
+  left: 1em;
+  bottom: 0;
 }
 
 .articles {
@@ -144,8 +152,19 @@ h1, h2 {
     font-size: 2rem;
 }
 
+.carousel-caption p {
+  padding-bottom: 8px !important;
+}
+
 .acceuil-div p {
-    padding-bottom: 2rem;
+  padding-bottom: 2rem;
+}
+
+.carousel-categorie-home {
+  color: #FFDF32;
+  font-size: 18px;
+  padding: 0 0 1rem 0;
+  margin: 0;
 }
 
 .important-word {

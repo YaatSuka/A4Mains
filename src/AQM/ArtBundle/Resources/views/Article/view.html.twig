@@ -45,7 +45,7 @@
             </div>
             <div class="row">
                 {% for article in articles %}
-                    <div class="column col-md-3 col-sm-6">
+                    <div class="column">
                         <div class="content article-content-div">
                             <img class="portfolio_img" src="{{ asset(article.image.webPath) }}" alt="{{ article.image.alt }}" style="width: 100%" data-modal="img{{ loop.index }}" >
                             <h3>{{ article.nom }}</h3>
@@ -54,10 +54,12 @@
                             {% else %}
                                 <p><i>Pas de description</i></p>
                             {% endif %}
-                            <p class="article_view_prix">{{ article.prix|number_format(0, '', ' ') }} CFP</p>
-                            <p class="{% if article.etat.id == 1 %}article_dispo{% else %}article_rupture{% endif %}">
-                                {{ article.etat.libelle }}
-                            </p>
+                            <div class="prix-etat-div">
+                                <p class="article_view_prix">{{ article.prix|number_format(0, '', ' ') }} CFP</p>
+                                <p class="{% if article.etat.id == 1 %}article_dispo{% else %}article_rupture{% endif %}">
+                                    {{ article.etat.libelle }}
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <div id="img{{ loop.index }}" class="modal">

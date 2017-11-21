@@ -26,4 +26,14 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
             ->setMaxResults($limit);
         return $queryBuilder->getQuery()->getResult();
     }
+
+    public function getArticlesOrderByCategorie()
+    {
+        $queryBuilder = $this->createQueryBuilder('a');
+        $queryBuilder
+            ->addOrderBy('a.categorie')
+            ->addOrderBy('a.nom');
+
+        return $queryBuilder->getQuery()->getResult();
+    }
 }

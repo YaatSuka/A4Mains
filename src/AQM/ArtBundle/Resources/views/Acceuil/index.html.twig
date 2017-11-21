@@ -37,6 +37,7 @@
                                 <div class="carousel-caption">
                                     <h3>{{ article.nom }}</h3>
                                     <p>{{ article.description|nl2br }}</p>
+                                    <p class="carousel-categorie-home">{{ article.categorie.libelle }}</p>
                                 </div>
                             </div>
                         {% endfor %}

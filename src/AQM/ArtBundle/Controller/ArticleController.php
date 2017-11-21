@@ -15,10 +15,13 @@ class ArticleController extends Controller
 {
     public function indexAction()
     {
-        $articles = $this->getDoctrine()->getRepository('AQMArtBundle:Article')->findAll();
+        $em = $this->getDoctrine()->getManager();
+        $articles = $em->getRepository('AQMArtBundle:Article')->getArticlesOrderByCategorie();
+        $categories = $em->getRepository('AQMArtBundle:Categorie')->getCategoriesByOrdre();
 
         return $this->render('AQMArtBundle:Article:index.html.twig', array(
-            'articles' => $articles
+            'articles' => $articles,
+            'categories' => $categories
         ));
     }
 
