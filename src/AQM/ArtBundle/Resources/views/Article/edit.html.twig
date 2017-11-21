@@ -2,7 +2,7 @@
 
 {% block body %}
     <div class="well">
-        <h2>Modifier un article</h2>
+        <h2><i class="glyphicon glyphicon-pencil color-submit-btn"></i> Modifier un article</h2>
         {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
         {% if not form.vars.valid %}
             <div class="alert alert-danger">

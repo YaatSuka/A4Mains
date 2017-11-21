@@ -161,3 +161,26 @@ h1, h2 {
   margin-top: -20px;
   width: 100px;
 }
+
+.login-div {
+  margin-top: -2rem;
+  margin-bottom: -1.2rem !important;
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.color-login {
+  color: #4285F4 !important;
+}
+
+.color-login-btn{
+  color: #2BBBAD;
+}
+
+.well {
+  margin-top: -2rem !important;
+  margin-bottom: -2rem !important;
+}
+
+.color-submit-btn {
+  color: #00D054;
+}
