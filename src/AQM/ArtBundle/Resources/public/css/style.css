@@ -10,7 +10,6 @@ h1, h2 {
 }
 
 .bandeau{
-  height: 130px;
   width: 100%;
   display: table;
   background-color: #C4C3C8;
@@ -19,8 +18,9 @@ h1, h2 {
   margin-top: -5px;
 }
 
-.bandeau h1 {
-  display: table-cell; vertical-align: middle;
+
+#bandeau_img {
+  width: 100%;
 }
 
 #nocturne-tooltip {
