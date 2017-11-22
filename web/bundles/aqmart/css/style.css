@@ -127,6 +127,10 @@ h1, h2 {
   color: orangered;
 }
 
+.article_confection {
+  color: #FFB759;
+}
+
 .view_title {
   background-color: rgba(0, 0, 0, 0.6);
   padding-top: 10px;
