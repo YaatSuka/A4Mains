@@ -1,5 +1,9 @@
 $(document).ready(function () {
-    var pathname = window.location.pathname;
+    $('#rencontrez-nous-link').click(function (e) {
+        e.preventDefault();
 
-    $('#nav-bar-list > li > a[href="'+pathname+'"]').parent().addClass('active');
+        var target = $(this).attr('href');
+
+        $('html, body').stop().animate({ scrollTop: $(target).offset().top }, 1000);
+    });
 });
