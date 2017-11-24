@@ -20,6 +20,7 @@
 
 {% block javascripts %}
     <script src="{{ asset('bundles/aqmart/js/navbar.js') }}" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfeTVebqLaST7EiucEhStsc7mgmevuqfs&callback=initMap" async defer></script>
     <script>
         function initMap() {
             var uluru = new google.maps.LatLng(-22.273904, 166.452752);
@@ -31,10 +32,9 @@
                 position: uluru,
                 map: map
             });
+            google.maps.event.addDomListener(window, "load", initMap);
         }
-        google.maps.event.addDomListener(window, "load", initMap);
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfeTVebqLaST7EiucEhStsc7mgmevuqfs&callback=initMap" async defer></script>
 {% endblock %}
 
 {% block footer %}
