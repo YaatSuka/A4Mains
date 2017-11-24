@@ -15,7 +15,7 @@
         </ul>
         {% if is_granted('ROLE_ADMIN') %}
             <ul id="nav-bar-list" class="nav navbar-nav navbar-right">
-                <li><a href="{{ path('aqm_art_articles') }}">Gérer les articles</a></li>
+                <li><a id="navbar-admin-begin" href="{{ path('aqm_art_articles') }}">Gérer les articles</a></li>
                 <li><a href="{{ path('aqm_art_categories') }}">Gérer les catégories</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -29,5 +29,10 @@
                 </li>
             </ul>
         {% endif %}
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a id="rencontrez-nous-link" href="#rencontrez-nous" class="btn btn-warning">Rencontrez-nous !</a>
+            </li>
+        </ul>
     </div>
 </nav>

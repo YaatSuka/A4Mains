@@ -207,3 +207,17 @@ h1, h2 {
 .color-submit-btn {
   color: #00D054;
 }
+
+#rencontrez-nous-link {
+  padding: 9.5px 10px 9.5px 10px;
+  margin-right: 15px;
+}
+
+#navbar-admin-begin:before {
+  content: '';
+  border-left: 1px solid #959395;
+  position: absolute;
+  bottom: 5px;
+  top: 5px;
+  left: 0;
+}

@@ -10,6 +10,8 @@ $(document).ready(function () {
         }
     });
 
+    $("label[for='username'").attr('class', 'active');
+
     $('input').each(function () {
         var label = $("label[for='"+$(this).attr('id')+"']");
         if ($(this).val() !== '') {

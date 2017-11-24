@@ -22,6 +22,7 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
         $queryBuilder = $this->createQueryBuilder('a');
         $queryBuilder
             ->where($queryBuilder->expr()->eq('a.categorie', $categorie->getId()))
+            ->andWhere('a.etat = 1')
             ->orderBy('a.id', 'DESC')
             ->setMaxResults($limit);
         return $queryBuilder->getQuery()->getResult();
