@@ -22,7 +22,7 @@
     <script src="{{ asset('bundles/aqmart/js/navbar.js') }}" type="text/javascript"></script>
     <script>
         function initMap() {
-            var uluru = {lat: -22.273904, lng: 166.452752};
+            var uluru = new google.maps.LatLng(-22.273904, 166.452752);
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 15,
                 center: uluru
@@ -32,6 +32,7 @@
                 map: map
             });
         }
+        google.maps.event.addDomListener(window, "load", initMap);
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfeTVebqLaST7EiucEhStsc7mgmevuqfs&callback=initMap" async defer></script>
 {% endblock %}
