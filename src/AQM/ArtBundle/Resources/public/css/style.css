@@ -14,7 +14,7 @@ h1, h2 {
   display: table;
   background-color: #C4C3C8;
   padding-top: 0;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid #FF961F;
   margin-top: -5px;
 }
 
@@ -65,7 +65,7 @@ h1, h2 {
 }
 
 #navbar-home-link {
-  padding: 6px;
+  /*padding: 6px;*/
   font-size: 2.1rem;
 }
 
@@ -220,4 +220,33 @@ h1, h2 {
   bottom: 5px;
   top: 5px;
   left: 0;
+}
+
+.client-nav-bar a, .admin-nav-bar a {
+  color: #E8E8E8 !important;
+}
+
+.client-nav-bar a:hover, .admin-nav-bar a:hover {
+  color: #FF961F !important;
+}
+
+.client-nav-bar:hover, .admin-nav-bar:hover {
+  background-color: #080808;
+}
+
+#mainNavBar {
+  box-shadow:3px 3px 15px black;
+}
+
+#accueil-li a {
+  padding-top: 10px;
+  padding-bottom: 9px;
+}
+
+.dropdown-menu > li > a {
+  color: #222222 !important;
+}
+
+footer {
+  box-shadow: 0 -6px 20px -5px black;
 }

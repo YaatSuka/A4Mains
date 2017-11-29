@@ -1,23 +1,23 @@
-<nav class="navbar navbar-inverse">
-    <div class="bandeau">
-        <img src="{{ asset('bundles/aqmart/images/site/bandeau.jpg') }}" alt="bandeau.jpg" id="bandeau_img">
-    </div>
+<div class="bandeau">
+    <img src="{{ asset('bundles/aqmart/images/site/bandeau.jpg') }}" alt="bandeau.jpg" id="bandeau_img">
+</div>
+<nav id="mainNavBar" class="navbar navbar-inverse">
     <div class="container-fluid">
         <ul class="nav navbar-nav">
-            <li title="Acceuil">
+            <li class="client-nav-bar" id="accueil-li" title="Accueil">
                 <a id="navbar-home-link" href="{{ path('aqm_art_homepage') }}">
                     <i class="fa fa-home" aria-hidden="true"></i>
                 </a>
             </li>
             {% for categorie in categories %}
-                <li><a href="{{ path('aqm_art_articles_view', { 'slug': categorie.slug }) }}">{{ categorie.libelle }}</a></li>
+                <li class="client-nav-bar"><a href="{{ path('aqm_art_articles_view', { 'slug': categorie.slug }) }}">{{ categorie.libelle }}</a></li>
             {% endfor %}
         </ul>
         {% if is_granted('ROLE_ADMIN') %}
             <ul id="nav-bar-list" class="nav navbar-nav navbar-right">
-                <li><a id="navbar-admin-begin" href="{{ path('aqm_art_articles') }}">Gérer les articles</a></li>
-                <li><a href="{{ path('aqm_art_categories') }}">Gérer les catégories</a></li>
-                <li class="dropdown">
+                <li class="admin-nav-bar"><a id="navbar-admin-begin" href="{{ path('aqm_art_articles') }}">Gérer les articles</a></li>
+                <li class="admin-nav-bar"><a href="{{ path('aqm_art_categories') }}">Gérer les catégories</a></li>
+                <li class="dropdown admin-nav-bar">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         Mon compte <span class="caret"></span>
                     </a>
