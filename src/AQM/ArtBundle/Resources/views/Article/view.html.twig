@@ -1,5 +1,7 @@
 {% extends 'AQMArtBundle::layout.html.twig' %}
 
+{% block title %}{{ categorie.libelle }} - {{ parent() }}{% endblock %}
+
 {% block stylesheet %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('bundles/aqmart/css/view.css') }}" />
