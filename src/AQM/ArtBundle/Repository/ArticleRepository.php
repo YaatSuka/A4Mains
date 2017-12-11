@@ -14,7 +14,9 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
     {
         $queryBuilder = $this->createQueryBuilder('a');
         $queryBuilder
-            ->where($queryBuilder->expr()->eq('a.categorie', $categorie->getId()));
+            ->where($queryBuilder->expr()->eq('a.categorie', $categorie->getId()))
+            ->addOrderBy('a.etat', 'ASC')
+            ->addOrderBy('a.id', 'DESC');
         return $queryBuilder->getQuery()->getResult();
     }
 
